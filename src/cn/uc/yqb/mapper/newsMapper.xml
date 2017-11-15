@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="cn.uc.yqb.mapper.newsMapper">
+  	<!-- 查看全部 -->
+  	<select id="getAllNews" resultType="cn.uc.yqb.beans.News">
+  		select * from t_news;
+  	
+  	</select>
+  	<!-- 查询 -->
+  	
+  	<!-- 添加 -->
+  	<insert id="insertNews" parameterType="cn.uc.yqb.beans.News">
+  		insert into t_news(
+			t_t_id,n_title,n_source,n_content,n_createtime,n_commcount,n_readcount,n_video,n_author,n_sharecount,n_ifreport,n_ifhot
+		)
+		values(
+	
+			#{t_t_id},#{n_title},#{n_source},#{n_content},#{n_createtime},#{n_commcount},#{n_readcount},#{n_video},#{n_author},#{n_sharecount},#{n_ifreport},#{n_ifhot}
+		)
+  		
+  	</insert>
+  	
+  	<!-- 修改 -->
+  	<update id="updateNews" parameterType="cn.uc.yqb.beans.News">
+  		
+  		update t_news set t_t_id=#{t_t_id},n_title=#{n_title},n_source=#{n_source},n_content=#{n_content},
+  		
+  		n_video=#{n_video},n_author=#{n_author},n_ifreport=#{n_ifreport},n_ifhot=#{n_ifhot} 
+  		
+  		where id=#{id};
+  		
+  	</update>
+  
+  </mapper>

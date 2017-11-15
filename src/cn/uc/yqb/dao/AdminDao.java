@@ -1,0 +1,23 @@
+package cn.uc.yqb.dao;
+
+import cn.uc.yqb.beans.Admin;
+import cn.uc.yqb.utils.Result;
+
+public interface AdminDao {
+
+	/**
+	 * Ìí¼Ó
+	 */
+	Result insertAdmin(Admin admin);
+	
+	/**
+	 * ÐÞ¸Ä
+	 */
+	Result updateAdmin(Admin admin);
+	
+	/**
+	 * É¾³ý
+	 */
+	Result deleteAdmin(int id);
+	
+}
